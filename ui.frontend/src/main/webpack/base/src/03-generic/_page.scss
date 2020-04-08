@@ -1,0 +1,18 @@
+html,
+body {
+    box-sizing: border-box;
+    font-size: $base-font-size;
+    font-family: $base-font-family;
+    line-height: $base-line-height;
+    background-color: $body-bg-color;
+}
+
+body {
+    font-weight: 300;
+    color: $black;
+    overflow-x: hidden;
+}
+
+body.see-body--scroll-locked {
+    overflow-y: hidden;
+}

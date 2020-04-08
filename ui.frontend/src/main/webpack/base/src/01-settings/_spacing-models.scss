@@ -1,0 +1,103 @@
+// Note:  For global consistency, spacing (margins and padding) around all elements should use the spacing models map below.
+//        (Layout container and grid elements may not apply.)
+//        Please see the following article explaining the methodology and the different models:
+//        https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62
+$spacing-models: (
+  inset: (
+    xs: $spacing--xs $spacing--xs,
+    sm: $spacing--sm $spacing--sm,
+    md: $spacing--md $spacing--md,
+    lg: $spacing--lg $spacing--lg,
+    xl: $spacing--xl $spacing--xl
+  ),
+  inset-squish: (
+    sm: $spacing--xs $spacing--sm,
+    md: $spacing--sm $spacing--md,
+    lg: $spacing--md $spacing--lg,
+    xl: $spacing--lg $spacing--xl
+  ),
+  inset-stretch: (
+    sm: $spacing--md $spacing--sm,
+    md: $spacing--lg $spacing--md,
+    lg: $spacing--xl $spacing--lg
+  ),
+  stack: (
+    xs: 0 0 $spacing--xs 0,
+    sm: 0 0 $spacing--sm 0,
+    md: 0 0 $spacing--md 0,
+    lg: 0 0 $spacing--lg 0,
+    xl: 0 0 $spacing--xl 0
+  ),
+  inline: (
+    xs: 0 $spacing--xs 0 0,
+    sm: 0 $spacing--sm 0 0,
+    md: 0 $spacing--md 0 0,
+    lg: 0 $spacing--lg 0 0,
+    xl: 0 $spacing--xl 0 0
+  )
+);
+
+// Retrieves a spacing model from a series of spacing models
+// @param $spacing-model - the spacing model within the models map, ie: `inset`,`inline`
+// @param $unit - the spacing unit within the aforementioned model, ie: `sm`, `xl`
+//
+// Usage:
+//  .step-card {padding: get-spacing(inset-stretch, lg)}
+//  .form-label {margin: get-spacing(stack, xs)}
+@function get-spacing($spacing-model, $unit) {
+  @return map-get(map-get($spacing-models, $spacing-model), $unit);
+}
+
+$containerPaddingValues: ( 0, 25, 50, 100);
+
+@mixin setPadding() {
+    @each $pv in $containerPaddingValues {
+        &--tp#{$pv} {
+            padding-top: #{$pv}px;
+
+            @include media-breakpoint-down('lg') {
+                padding-top: #{$pv / 2}px
+            }
+
+            @include media-breakpoint-down('md') {
+                padding-top: #{$pv / 3}px
+            }
+        }
+
+        &--lp#{$pv} {
+            padding-left: #{$pv}px;
+
+            @include media-breakpoint-down('lg') {
+                padding-left: #{$pv / 2}px
+            }
+
+            @include media-breakpoint-down('md') {
+                padding-left: #{$pv / 3}px
+            }
+        }
+
+        &--rp#{$pv} {
+            padding-right: #{$pv}px;
+
+            @include media-breakpoint-down('lg') {
+                padding-right: #{$pv / 2}px
+            }
+
+            @include media-breakpoint-down('md') {
+                padding-right: #{$pv / 3}px
+            }
+        }
+
+        &--bp#{$pv} {
+            padding-bottom: #{$pv}px;
+
+            @include media-breakpoint-down('lg') {
+                padding-bottom: #{$pv / 2}px
+            }
+
+            @include media-breakpoint-down('md') {
+                padding-bottom: #{$pv / 3}px
+            }
+        }
+    }
+}

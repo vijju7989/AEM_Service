@@ -1,0 +1,20 @@
+.see-cc {
+    .see-cc__title {
+        display: flex;
+
+        &--left {
+            justify-content: flex-start;
+        }
+
+        &--center{
+            justify-content: center;
+        }
+
+        &--right {
+            justify-content: flex-end;
+        }
+    }
+
+    @include setPadding();
+
+}

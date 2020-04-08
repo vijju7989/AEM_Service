@@ -1,0 +1,35 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 375px,
+  md: 768px,
+  lg: 1280px,
+  xl: 1920px
+) !default;
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 350px,
+  md: 720px,
+  lg: 1240px,
+  xl: 1900px
+) !default;
+
+// Import Boostrap after re-aligning our breakpoints.
+@import "bootstrap/scss/bootstrap";
+
+// Clear out the default left/right padding so our Container component can handle it.
+.container,
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// Clear out the default left/right margin so our Container component can handle it.
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}

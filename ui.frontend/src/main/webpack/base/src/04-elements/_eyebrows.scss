@@ -1,0 +1,9 @@
+.see-eyebrow {
+    @include resp-type($eyebrow-map);
+    font-family: Forza-Book;
+    font-weight: 300;
+    line-height: 1.563;
+    letter-spacing: 3.52px;
+    text-transform: uppercase;
+    color: $darkGrey;
+}

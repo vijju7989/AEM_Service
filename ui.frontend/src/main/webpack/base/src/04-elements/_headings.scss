@@ -1,0 +1,43 @@
+//== Heading Styles
+h1,
+h2,
+h3,
+h4 {
+    color: $black;
+    font-family: Forza-Bold;
+    font-weight: 600;
+}
+
+// Mobile/Tablet (S | T)
+h1 {
+    @include resp-type($h1-map);
+}
+
+h2 {
+    @include resp-type($h2-map);
+    letter-spacing: -0.44px;
+
+    @include media-breakpoint-up('lg') {
+        letter-spacing: -0.64px;
+    }
+
+    @include media-breakpoint-up('xl') {
+        letter-spacing: 0.7px;
+    }
+}
+
+h3 {
+    @include resp-type($h3-map);
+
+    @include media-breakpoint-up('xl') {
+        letter-spacing: -0.8px;
+    }
+}
+
+h4 {
+    @include resp-type($h4-map);
+
+    @include media-breakpoint-up('xl') {
+        letter-spacing: -0.64px;
+    }
+}

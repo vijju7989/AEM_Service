@@ -1,0 +1,26 @@
+@mixin responsive-embed($aspect-ratio) {
+    width: 100%;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 1px;
+      height: 0;
+
+      @if $aspect-ratio == 21by9 {
+        padding-bottom: calc(100% / (2.33 / 1));
+      }
+
+      @if $aspect-ratio == 16by9 {
+        padding-bottom: calc(100% / (1.77 / 1));
+      }
+
+      @if $aspect-ratio == 4by3 {
+        padding-bottom: calc(100% / (1.33 / 1));
+      }
+
+      @if $aspect-ratio == 1by1 {
+        padding-bottom: 100%;
+      }
+    }
+  }

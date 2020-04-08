@@ -1,0 +1,94 @@
+// Font-size maps referenced by Responsive Type mixin
+$body-1-map: (
+    null: $body-sm-font-map
+);
+
+$small-map: (
+    null: $small-sm-font-map,
+    sm: $small-lg-font-map
+);
+
+$header-map: (
+    null: $small-sm-font-map,
+    lg: $small-sm-font-map
+);
+
+$footer-map: (
+    null: $footer-sm-font-map,
+    sm: $footer-sm-font-map
+);
+
+$eyebrow-map: (
+    null: $eyebrow-font-map
+);
+
+$h1-map: (
+    null: $h1-sm-font-map,
+    lg: $h1-lg-font-map,
+    xl: $h1-xl-font-map
+);
+
+$h2-map: (
+    null: $h2-sm-font-map,
+    lg: $h2-lg-font-map,
+    xl: $h2-xl-font-map
+);
+
+$h3-map: (
+    null: $h3-sm-font-map,
+    lg: $h3-lg-font-map,
+    xl: $h3-xl-font-map
+);
+
+$h4-map: (
+    null: $h4-sm-font-map,
+    lg: $h4-lg-font-map,
+    xl: $h4-xl-font-map
+);
+
+$breakpoints: (
+  'xs': 0,
+  'sm': 375px,
+  'md': 768px,
+  'lg': 1280px,
+  'xl': 1920px
+) !default;
+
+// Responsive Type Mixin
+@mixin resp-type($fs-map, $fs-breakpoints: $breakpoints) {
+    @each $fs-breakpoint, $fs-font-size in $fs-map {
+        @if $fs-breakpoint == null {
+            @include make-font-size($fs-font-size);
+        }
+        @else {
+            // If $fs-font-size is a key that exists in
+            // $fs-breakpoints, use the value
+            @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+                $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+            }
+            @media screen and (min-width: $fs-breakpoint) {
+                @include make-font-size($fs-font-size);
+            }
+        }
+    }
+}
+
+// Utility function for mixin font-size and line-height
+@mixin make-font-size($fs-font-size) {
+    // If $fs-font-size is a list, include
+    // both font-size and line-height
+    @if type-of($fs-font-size) == "list" {
+        font-size: #{nth($fs-font-size, 1)}rem;
+        @if (length($fs-font-size) > 1) {
+            line-height: #{nth($fs-font-size, 2)}rem;
+        }
+    }
+    @else {
+        font-size: #{$fs-font-size}rem;
+    }
+}
+
+.thin-p-font {
+    font-weight: 300;
+    font-family: Forza-book;
+}

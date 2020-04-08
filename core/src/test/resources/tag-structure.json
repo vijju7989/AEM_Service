@@ -1,0 +1,8 @@
+{
+  "sealedAir": {
+    "jcr:primaryType": "cq:Tag",
+    "jcr:title": "SealedAir",
+    "sling:resourceType": "cq/tagging/components/tag",
+    "jcr:mixinType": ["rep:AccessControllable"]
+  }
+}

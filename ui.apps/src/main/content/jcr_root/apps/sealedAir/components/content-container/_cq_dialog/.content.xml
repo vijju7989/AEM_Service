@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Container"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[core.wcm.components.container.v1.editor,core.wcm.components.title.v2.editor]"
+    helpPath="https://www.adobe.com/go/aem_cmp_container_v1"
+    trackingFeature="core-components:container:v1">
+    <content
+        granite:class="cmp-container__editor"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Properties"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured"
+                                        sling:hideChildren="[layout]">
+                                            <well
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <titleHeading
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/heading"
+                                                        level="4"
+                                                        text="Heading"/>
+                                                    <text
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldDescription="Add an optional heading to the container."
+                                                        fieldLabel="Text"
+                                                        name="./text"/>
+                                                    <defaulttypes
+                                                        granite:class="core-title-sizes-default"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                        fieldLabel="Type / Size"
+                                                        name="./type">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <h1
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="H1"
+                                                                value="h1"/>
+                                                            <h2
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="H2"
+                                                                value="h2"/>
+                                                            <h3
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="H3"
+                                                                value="h3"/>
+                                                            <h4
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="H4"
+                                                                value="h4"/>
+                                                        </items>
+                                                    </defaulttypes>
+                                                    <alignment jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                                        fieldLabel="Alignment"
+                                                        fieldDescription="Heading Alignment."
+                                                        name="./alignment">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <left jcr:primaryType="nt:unstructured"
+                                                                text="Left"
+                                                                selected="{Boolean}true"
+                                                                value="left"/>
+                                                            <center jcr:primaryType="nt:unstructured"
+                                                                text="Center"
+                                                                value="center"/>
+                                                            <right jcr:primaryType="nt:unstructured"
+                                                                text="Right"
+                                                                value="right"/>
+                                                        </items>
+                                                    </alignment>
+                                                </items>
+                                            </well>
+                                            <id
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="HTML ID attribute to apply to the component."
+                                                fieldLabel="ID"
+                                                name="./id"/>
+                                            <addContainer
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                name="./addContainer"
+                                                text="Add gutters?"
+                                                fieldDescription="Add gutters to content."
+                                                value="{Boolean}true" />
+                                            <topPadding jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                fieldLabel="Top Padding"
+                                                fieldDescription="Adds top padding to the container."
+                                                name="./topPadding">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <none jcr:primaryType="nt:unstructured"
+                                                        text="none"
+                                                        selected="{Boolean}true"
+                                                        value="0"/>
+                                                    <twentyFive jcr:primaryType="nt:unstructured"
+                                                        text="25px"
+                                                        value="25"/>
+                                                    <fifty jcr:primaryType="nt:unstructured"
+                                                        text="50px"
+                                                        value="50"/>
+                                                    <oneHundred jcr:primaryType="nt:unstructured"
+                                                        text="100px"
+                                                        value="100"/>
+                                                </items>
+                                            </topPadding>
+                                            <leftPadding jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                fieldLabel="Left Padding"
+                                                fieldDescription="Adds left padding to the container."
+                                                name="./leftPadding">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <none jcr:primaryType="nt:unstructured"
+                                                        text="none"
+                                                        selected="{Boolean}true"
+                                                        value="0"/>
+                                                    <twentyFive jcr:primaryType="nt:unstructured"
+                                                        text="25px"
+                                                        value="25"/>
+                                                    <fifty jcr:primaryType="nt:unstructured"
+                                                        text="50px"
+                                                        value="50"/>
+                                                    <oneHundred jcr:primaryType="nt:unstructured"
+                                                        text="100px"
+                                                        value="100"/>
+                                                </items>
+                                            </leftPadding>
+                                            <rightPadding jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                fieldLabel="Right Padding"
+                                                fieldDescription="Adds right padding to the container."
+                                                name="./rightPadding">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <none jcr:primaryType="nt:unstructured"
+                                                        text="none"
+                                                        selected="{Boolean}true"
+                                                        value="0"/>
+                                                    <twentyFive jcr:primaryType="nt:unstructured"
+                                                        text="25px"
+                                                        value="25"/>
+                                                    <fifty jcr:primaryType="nt:unstructured"
+                                                        text="50px"
+                                                        value="50"/>
+                                                    <oneHundred jcr:primaryType="nt:unstructured"
+                                                        text="100px"
+                                                        value="100"/>
+                                                </items>
+                                            </rightPadding>
+                                            <btmPadding jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                fieldLabel="Bottom Padding"
+                                                fieldDescription="Adds bottom padding to the container."
+                                                name="./btmPadding">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <none jcr:primaryType="nt:unstructured"
+                                                        text="none"
+                                                        selected="{Boolean}true"
+                                                        value="0"/>
+                                                    <twentyFive jcr:primaryType="nt:unstructured"
+                                                        text="25px"
+                                                        value="25"/>
+                                                    <fifty jcr:primaryType="nt:unstructured"
+                                                        text="50px"
+                                                        value="50"/>
+                                                    <oneHundred jcr:primaryType="nt:unstructured"
+                                                        text="100px"
+                                                        value="100"/>
+                                                </items>
+                                            </btmPadding>
+                                            <backgroundColor
+                                                granite:hide="${!cqDesign.backgroundColorEnabled || cqDesign.backgroundColorSwatchesOnly}"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                fieldLabel="Background Color"
+                                                name="./backgroundColor"
+                                                showDefaultColors="{Boolean}false"
+                                                showProperties="{Boolean}true"
+                                                showSwatches="{Boolean}true">
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="core/wcm/components/commons/datasources/allowedcolorswatches/v1"/>
+                                            </backgroundColor>
+                                            <backgroundColorSwatchesOnly
+                                                granite:hide="${!cqDesign.backgroundColorEnabled || !cqDesign.backgroundColorSwatchesOnly}"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                fieldLabel="Background Color"
+                                                name="./backgroundColor"
+                                                showDefaultColors="{Boolean}false"
+                                                showProperties="{Boolean}false"
+                                                showSwatches="{Boolean}true"
+                                                variant="swatch">
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="core/wcm/components/commons/datasources/allowedcolorswatches/v1"/>
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cmp-container-v1-dialog-edit-hook="backgroundColorSwatchesOnly"/>
+                                            </backgroundColorSwatchesOnly>
+                                            <backgroundImageAsset
+                                                granite:hide="${!cqDesign.backgroundImageEnabled}"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                allowUpload="{Boolean}false"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Background Image"
+                                                fileNameParameter="./fileName"
+                                                fileReferenceParameter="./backgroundImageReference"
+                                                mimeTypes="[image/gif,image/jpeg,image/png,image/tiff]"
+                                                multiple="{Boolean}false"
+                                                name="./file"
+                                                title="Upload Image Asset"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                            <bgImagePosition jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                fieldLabel="Background Image Focal Point"
+                                                fieldDescription="Focal point for background image. Image will resize,responisvely, from this point."
+                                                name="./bgImagePosition">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <topLeft jcr:primaryType="nt:unstructured"
+                                                        text="Top Left"
+                                                        value="top left"/>
+                                                    <topCenter jcr:primaryType="nt:unstructured"
+                                                        text="Top Center"
+                                                        value="top center"/>
+                                                    <topRight jcr:primaryType="nt:unstructured"
+                                                        text="Top Right"
+                                                        value="top right"/>
+                                                    <centerLeft jcr:primaryType="nt:unstructured"
+                                                        text="Center Left"
+                                                        value="center left"/>
+                                                    <centerCenter jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}true"
+                                                        text="Center Center "
+                                                        value="center center"/>
+                                                    <centerRight jcr:primaryType="nt:unstructured"
+                                                        text="Center Right"
+                                                        value="center right"/>
+                                                    <bottomLeft jcr:primaryType="nt:unstructured"
+                                                        text="Bottom Left"
+                                                        value="bottom left"/>
+                                                    <bottomCenter jcr:primaryType="nt:unstructured"
+                                                        text="Bottom Center"
+                                                        value="bottom center"/>
+                                                    <bottomRight jcr:primaryType="nt:unstructured"
+                                                        text="Bottom Right"
+                                                        value="bottom right"/>
+                                                </items>
+                                            </bgImagePosition>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </properties>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

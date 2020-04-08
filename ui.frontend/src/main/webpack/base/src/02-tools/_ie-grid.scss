@@ -1,0 +1,80 @@
+@mixin msGrid($col, $row) {
+    $items: 0;
+    @for $i from 1 through $row {
+        @for $j from 1 through $col {
+            $items: $items + 1;
+            &:nth-child(#{$items}) {
+                -ms-grid-column: $j;
+                -ms-grid-row: $i;
+            }
+        }
+    }
+}
+
+@mixin initMSGrid($size) { // Toggles be 50/50 (default) and 33/33/33 only
+    display: -ms-grid;
+
+    @if $size == '50' {
+        -ms-grid-columns: 1fr;
+
+        > * {
+            @include msGrid(1, 6);
+        }
+
+        @include media-breakpoint-up(md) {
+            -ms-grid-columns: 1fr 1fr;
+
+            > * {
+                @include msGrid(2, 3);
+            }
+        }
+    }
+
+    @if $size == '33' {
+        -ms-grid-columns: 1fr;
+
+        > * {
+            @include msGrid(1, 9);
+        }
+
+        @include media-breakpoint-up(md) {
+          -ms-grid-columns: 1fr 1fr 1fr;
+
+          > * {
+              @include msGrid(3, 3);
+          }
+        }
+    }
+
+    @if $size == '33m50' {
+        -ms-grid-columns: 1fr 1fr;
+
+        > * {
+            @include msGrid(2, 3);
+        }
+
+        @include media-breakpoint-up(md) {
+          -ms-grid-columns: 1fr 1fr 1fr;
+
+          > * {
+              @include msGrid(3, 2);
+          }
+        }
+    }
+
+    @if $size == '25' {
+        -ms-grid-columns: 1fr;
+
+        > * {
+            @include msGrid(1, 12);
+        }
+
+        @include media-breakpoint-up(md) {
+          -ms-grid-columns: 1fr 1fr 1fr 1fr;
+
+          > * {
+              @include msGrid(4, 3);
+          }
+        }
+    }
+}

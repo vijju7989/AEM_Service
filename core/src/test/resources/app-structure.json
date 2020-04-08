@@ -1,0 +1,8 @@
+{
+    "sealedAir": {
+        "jcr:primaryType": "nt:folder",
+        "components": {
+            "jcr:primaryType": "nt:folder"
+        }
+    }
+}

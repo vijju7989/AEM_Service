@@ -1,0 +1,21 @@
+li {
+  @include resp-type($body-1-map);
+  margin: get-spacing(stack, sm);
+  padding-left: $spacing--xs;
+  list-style-type: none;
+}
+
+ul,
+ol,
+dl {
+  color: inherit;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  margin: 0 auto;
+  padding: get-spacing(stack, md);
+  list-style-type: none;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}

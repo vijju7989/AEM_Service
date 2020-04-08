@@ -1,0 +1,76 @@
+<div class="see-header header__wrapper" data-cmp-is="header">
+<div class="container-fluid">
+    <div class="row">
+     <div class="col-12 columnClass">
+        <div class="header-main-wrapper">
+      <nav class="navbar navbar-expand-lg slideInLeft see-header__navbar">
+        <a href="#" class="navbar-brand see-header__navbar-brand">
+            <sly data-sly-resource="${'see-logo' @ resourceType='sealedAir/components/image'}"></sly>
+        </a>
+        <div class="header-search">
+            <div class="navbar-search"
+                data-sly-resource="${'see-search' @ resourceType='sealedAir/components/search'}">
+            </div>
+        </div>
+        <button class="navbar-toggler collapsed" type="button" id="seeHeaderToggleButton" data-toggle="collapse"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  data-target="#navbarSupportedContent" aria-label="Toggle navigation">
+            <i class="navbar-toggler__menu-icon icon-menu see-header__navbar-toggler"></i>
+            <i class="navbar-toggler__close-icon icon-cross"></i>
+        </button>
+       <div class="collapse navbar-collapse see-header__top-menu" id="navbarmenu">
+        <ul class="navbar-nav see-header__top-menu--content">
+         <li class="nav-item dropdown megamenu-li">
+          <a class="nav-link dropdown-toggle nav-link__subClass" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products &amp; Services</a>
+          <div class="dropdown-menu see-header__megamenu megamenu" aria-labelledby="dropdown01">
+           <div class="row">
+            <div class="col-sm-0 col-lg-7">
+                    <div class="submenuClass">
+                      <a  href="#" class="back">
+                        <span class="dropdown-item__class">EXPLORE ALL OUR PRODUCTS</span></a>
+           <div class="" >
+                <a class="dropdown-item" href="#">Action</a>
+            <ul class="dropdown-menu">
+                <a href="#" class="back icon-arrow-left">
+                    <span class="dropdown-item__class"> Action </span></a>
+                <li class="dropdown-divider"></li>
+                <li class="dropdown"><a
+                        class="dropdown-item dropdown-item__class"
+                        href="#">Action1</a></li>
+                <li><a class="dropdown-item dropdown-item__class"
+                        href="#">Another action</a></li>
+                <li><a class="dropdown-item dropdown-item__class"
+                        href="#">Something else here</a></li>
+            </ul>
+            </div>
+             <a class="dropdown-item" href="#">Something else here</a>
+             <a class="dropdown-item" href="#">Another action</a>
+             <a class="dropdown-item" href="#">Something else here</a>
+             <a class="dropdown-item__viewallClass" href="#">View all Products</a>
+            </div>
+            </div>
+            <div class="col-sm-6 col-lg-5">
+             <img src="https://source.unsplash.com/250x150/?sig=4" alt="..." style="width: 100%;">
+            </div>
+           </div>
+          </div>
+         </li>
+         <li class="nav-item"><a href="#" class="nav-link nav-link__subClass" target="_blank">Sectors</a></li>
+         <li class="nav-item"><a href="#" class="nav-link nav-link__subClass" target="_blank">Customer Success</a></li>
+         <li class="nav-item"><a href="#" class="nav-link nav-link__subClass" target="_blank">Company</a></li>
+         <li class="nav-item"><a href="#" class="nav-link nav-link__subClass" target="_blank">Contact</a></li>
+         <li class="nav-item">
+             <a href="#" class="nav-link icon-account nav-link__subClass" target="_blank"><span class="labelClass">My
+                     Account </span></a>
+         </li>
+         <li class="nav-item languageMobile"> <a href="#" class="navbar-language"
+                 data-sly-resource="${'lang-navigation' @ resourceType='sealedAir/components/languagenavigation'}">
+             </a></li>
+        </ul>
+       </div>
+      </nav>
+      </div>
+     </div>
+    </div>
+   </div>
+   </div>
+

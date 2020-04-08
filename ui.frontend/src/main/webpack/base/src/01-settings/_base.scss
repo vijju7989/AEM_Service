@@ -1,0 +1,33 @@
+/* autoprefixer grid: false */
+// Other variables
+$base-border-radius: 0;
+$base-z-index: 0;
+$base-duration: 0.3s;
+$base-easing: ease-in-out;
+
+// Border Radius variables
+$border-radius: $base-border-radius;
+$border-radius--lg: $base-border-radius * 1.5;
+$border-radius--sm: $base-border-radius / 1.5;
+$border-radius--circle: 50%;
+
+// Z-index variables
+$z-index--lowest: $base-z-index - 3;
+$z-index--lower: $base-z-index - 2;
+$z-index--low: $base-z-index - 1;
+$z-index--high: $base-z-index + 1;
+$z-index--higher: $base-z-index + 2;
+$z-index--highest: $base-z-index + 3;
+
+// Spacing variables - NOTE: Not for use directly within components, use spacing models when possible
+$base-spacing: 1rem; // 16px
+
+$spacing--xs: $base-spacing / 4; // 4px
+$spacing--sm: $base-spacing / 2; // 8px
+$spacing--md: $base-spacing; // 16px
+$spacing--lg: $base-spacing * 2; // 32px
+$spacing--xl: $base-spacing * 4; // 64px
+$spacing--xxl: $base-spacing * 8; // 128px
+
+// Top and bottom spacing for each section on a page
+$section-vertical-spacing: $spacing--xxl;

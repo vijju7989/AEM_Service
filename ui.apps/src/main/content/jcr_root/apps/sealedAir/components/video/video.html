@@ -1,0 +1,9 @@
+<div data-sly-test="${wcmmode.edit}" class="edit-in-dialog-msg">
+    ${'Video' @i18n}
+</div>
+
+<div class="see-video" data-sly-use.videoModel="com.sealedair.core.models.VideoModel">
+    <video class="see-video__wrapper" controls poster="${videoModel.posterUrl}">
+        <source src="${videoModel.videoUrl}" type="video/mp4" />
+    </video>
+</div>

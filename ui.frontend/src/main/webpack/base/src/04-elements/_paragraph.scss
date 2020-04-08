@@ -1,0 +1,14 @@
+p {
+    @include resp-type($body-1-map);
+    color: inherit;
+    letter-spacing: -0.32px;
+    padding: get-spacing(stack, md);
+
+    &:first-of-type {
+        padding-top: 1rem;
+    }
+
+    &:last-child {
+        padding-bottom: 0;
+    }
+}

@@ -1,0 +1,9 @@
+.see-video {
+    display: flex;
+    @include responsive-embed(16by9);
+
+    &__wrapper {
+        max-width: 100%;
+        object-fit: cover;
+    }
+}

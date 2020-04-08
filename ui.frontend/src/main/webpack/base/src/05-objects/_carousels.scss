@@ -1,0 +1,304 @@
+// Glide Carousel base styles
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
+.see-carousel {
+    // Sector Carousels
+    &.see-sector-carousel .see-glide {
+        position: relative;
+        background: rgb(50, 62, 72);
+        border-radius: 0px;
+        box-sizing: border-box;
+        align-items: center;
+        height: inherit;
+
+        &.glide--carousel {
+            height: 100%;
+        }
+
+        .glide--swipeable {
+            cursor: -webkit-grab;
+        }
+
+        .mainHeading {
+            display: flex;
+            justify-content: center;
+            padding-top: 5rem;
+            color: $white;
+            font-size: 14px;
+            font-family: Forza-medium;
+            font-weight: 300;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 5.09px;
+            line-height: 50px;
+        }
+
+        .glide__arrow {
+            display: none;
+
+            @include media-breakpoint-up(md) {
+                display: flex;
+                position: absolute;
+                font-size: 1rem;
+                border-radius: 50%;
+                padding: 15px;
+            }
+        }
+
+        .glide__arrow--left {
+            text-align: left;
+            left: 15%;
+            padding-left: 1rem;
+
+            @include media-breakpoint-up(md) {
+                left: 25%;
+            }
+        }
+
+        .glide__arrow--right {
+            text-align: right;
+            right: 15%;
+            padding-right: 1rem;
+
+            @include media-breakpoint-up(md) {
+                right: 25%;
+            }
+        }
+
+        .glide__bullets {
+            display: flex;
+        }
+
+        .glide__slide {
+            position: relative;
+            text-align: center;
+
+            .sectorClass {
+                color: $white;
+                font-family: Forza-medium;
+                font-size: 25px;
+                padding-bottom: 4rem;
+
+
+                .sectorName {
+                font-weight: 300;
+                height: 50px;
+                letter-spacing: 0px;
+                line-height: 50px;
+                }
+
+                .sectorNumber {
+                    padding-right: 5px;
+                    font-weight: lighter;
+                }
+            }
+        }
+
+        img {
+            margin-top: 10%;
+            width: 350px;
+
+            @include media-breakpoint-between(md,lg) {
+                width: 400px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                width: 500px;
+            }
+        }
+    }
+
+    // Hero Carousels
+    &.see-hc__carousel .see-glide {
+        .see-hc {
+            &__slides {
+                margin-bottom: -15px;
+
+                .see-hc {
+                    &__slide {
+                        padding-left: 0;
+                        margin-bottom: 0;
+                    }
+
+                    &__overlay {
+                        position: relative;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        &--content {
+                            position: absolute;
+                            left: 0;
+                            right: 10%;
+                            padding-left: 1.875rem;
+                            padding-bottom: 14rem;
+                            text-align: center;
+
+                            @include media-breakpoint-up(md) {
+                                text-align: left;
+                            }
+
+                            @include media-breakpoint-up(lg) {
+                                left: 10%;
+                            }
+
+                            // Temporary since RTE will set the font color
+                            .see-eyebrow,
+                            h1, p {
+                                color: $white;
+                            }
+
+                            p {
+                                max-width: inherit;
+
+                                @include media-breakpoint-up(md) {
+                                    max-width: 350px;
+                                }
+                            }
+
+                            .see-eyebrow {
+                                font-size: 1.125rem;
+                                display: flex;
+                            }
+
+                            .see-cta {
+                                justify-content: center;
+
+                                @include media-breakpoint-up(md) {
+                                    justify-content: inherit;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__img {
+                object-fit: cover;
+                height: 90vh;
+                width: 100%;
+            }
+
+            &__bullets {
+                bottom: 7rem;
+                left: 50%;
+
+                @include media-breakpoint-up(md) {
+                    left: 30%;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    left: 50%;
+                }
+
+                .see-hc__bullet {
+                    height: 50px;
+                    width: 50px;
+                    border-color: $white;
+                    background-color: transparent;
+                    color: $white;
+                    margin: 0 0.825rem;
+
+                    @include media-breakpoint-up(lg) {
+                        margin: 0 1.25rem;
+                    }
+
+                    &.glide__bullet--active {
+                        border: none;
+                        background-color: $white;
+                        color: $black;
+                        position: relative;
+
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            width: 68px;
+                            height: 70px;
+                            border: 5px solid $white;
+                            border-radius: 50%;
+                            transform: rotate(45deg);
+                            top: -10px;
+                            right: -9px;
+                            filter: blur(2px);
+                        }
+                    }
+                }
+            }
+
+            &__nav-block {
+                display: none;
+
+                @include media-breakpoint-up(md) {
+                    display: block;
+
+                    .see-hc-glide__arrow {
+                        display: flex;
+                        overflow-y: hidden;
+                        top: auto;
+                        bottom: -10%;
+                        height: 45%;
+                        right: 0;
+                        width: 395px;
+                        background-color: #323e48;
+                        border: none;
+                        flex-basis: 100%;
+                        flex-direction: column;
+                        overflow-x: hidden;
+                        padding: 0;
+
+                        .see-hc {
+                            &__nb-content {
+                                display: flex;
+                                flex-basis: 100%;
+
+                                &--inner {
+                                    display: flex;
+                                    z-index: $z-index--high;
+                                    padding-left: 1.25rem;
+                                    padding-top: 1.875rem;
+                                    max-width: 65%;
+                                    text-align: left;
+                                    flex-direction: column;
+                                    background-color: #323e48;
+                                }
+
+                                .see-eyebrow {
+                                    font-size: 0.875rem;
+                                    color: $white;
+                                    flex-grow: 0.5;
+                                }
+
+                                .icon-arrow-right {
+                                    padding-bottom: 1rem;
+                                }
+
+                                .see-hc__abstract {
+                                    font-size: 1.375rem;
+                                    font-family: forza-bold;
+                                    text-transform: none;
+
+                                    .see-eyebrow {
+                                        font-size: 1.375rem;
+                                    }
+                                }
+                            }
+
+                            &__nb-img {
+                                max-height: 100%;
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                                object-fit: cover;
+                                object-position: top right;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

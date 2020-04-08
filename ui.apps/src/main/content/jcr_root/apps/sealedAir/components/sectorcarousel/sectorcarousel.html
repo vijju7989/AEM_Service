@@ -1,0 +1,24 @@
+<div data-sly-test="${wcmmode.edit}" class="edit-in-dialog-msg">
+    ${'Sector Carousel' @i18n}
+</div>
+
+<div class="see-carousel see-sector-carousel" data-sly-use.vsModel="com.sealedair.core.models.Carousel">
+    <div class="see-sector__glide see-glide glide see-glide--carousel">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides" data-sly-list.models="${vsModel.slides}">
+                <li class="glide__slide ">
+                    <img src="${models.image}" alt="True">
+                    <div class="sectorClass"><span class="sectorNumber">0${modelsList.index}</span>
+                        <span class="sectorName">${models.title}</span></div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="previous slide"
+                tabindex="-1"><i class="icon-arrow-left"></i></button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="next slide"
+                tabindex="-1"><i class="icon-arrow-right"></i> </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div data-sly-use.responsiveColumns="com.sealedair.core.models.ResponsiveColumnsModel"
+    data-sly-test="${wcmmode.edit}" class="edit-in-dialog-msg">
+    ${'Columns' @i18n}
+</div>
+
+<div class="row responsive-columns__row${responsiveColumns.noGutters ? ' responsive-columns__row--no-gutter' : ''}${responsiveColumns.revOrderMobile ? ' responsive-columns__row--reversed' : ''}${responsiveColumns.colMatchHeight ? ' responsive-columns__row--match-height' : ''}"
+    data-sly-list="${responsiveColumns.columns}">
+
+    <div class="responsive-columns__column col-md-${item.colWidth} ${item.classes}"
+        data-sly-resource="${'column-{0}' @ format=[itemList.index], resourceType='foundation/components/parsys'}">
+    </div>
+</div>
+

@@ -1,0 +1,95 @@
+$normal: 400;
+$semibold: 600;
+$bold: 700;
+
+// Regular
+@font-face {
+    font-family: 'Forza-Book';
+    src: url('../../../clientlibs/clientlib-site/resources/Forza-Book.otf') format('OpenType');
+    font-weight: $normal;
+    font-style: normal;
+}
+
+// Regular (Italic)
+@font-face {
+    font-family: 'Forza-Book';
+    src: url('../../../clientlibs/clientlib-site/resources/Forza-Book.otf') format('OpenType');
+    font-weight: $normal;
+    font-style: italic;
+}
+
+// Semibold
+@font-face {
+    font-family: 'Forza-Medium';
+    src: url('../../../clientlibs/clientlib-site/resources/Forza-Medium.otf') format('OpenType');
+    font-weight: $semibold;
+    font-style: normal;
+}
+
+// Semibold (Italic)
+@font-face {
+    font-family: 'Forza-Medium';
+    src: url('../../../clientlibs/clientlib-site/resources/Forza-Medium.otf') format('OpenType');
+    font-weight: $semibold;
+    font-style: italic;
+}
+
+//  Bold
+@font-face {
+    font-family: 'Forza-Bold';
+    src: url('../../../clientlibs/clientlib-site/resources/Forza-Bold.otf') format('OpenType');
+    font-weight: $bold;
+    font-style: normal;
+}
+
+// Bold (Italic)
+@font-face {
+    font-family: 'Forza-Bold';
+    src: url('../../../clientlibs/clientlib-site/resources/Forza-Bold.otf') format('OpenType');
+    font-weight: $bold;
+    font-style: italic;
+}
+
+// Variable format should follow the '$element-modifier-state-property' order
+// Typography
+$base-font-family: 'Forza-Book', sans-serif;
+
+$font-family-headings: $base-font-family;
+
+// Sizes
+$base-font-size: 16px;
+$small-font-size: 0.875rem;
+
+// Line Heights
+$base-line-height: 1.7;
+
+// Weights
+$font-weight-headings: $bold;
+
+// Font map values are defined in the following format, then compiled by the "@resp-type" mixin.
+// ([font size rems], [line-height rems])
+$body-sm-font-map: (1, 1.5);
+$body-lg-font-map: (1.125, 1.75);
+
+$footer-sm-font-map: (0.875, 0.875);
+
+$small-sm-font-map: (0.75, 1);
+$small-lg-font-map: (0.875, 1.25);
+
+$eyebrow-font-map: (0.8125, 1.563);
+
+$h1-sm-font-map: (2.625, 4.675);
+$h1-lg-font-map: (3.25, 4.675);
+$h1-xl-font-map: (5.125, 5.275);
+
+$h2-sm-font-map: (1.375, 1.4375);
+$h2-lg-font-map: (2, 2.4375);
+$h2-xl-font-map: (3.25, 3.3125);
+
+$h3-sm-font-map: (1.125, 3.125);
+$h3-lg-font-map: (1.75, 3.125);
+$h3-xl-font-map: (2.5, 2.575);
+
+$h4-sm-font-map: (1, 1.25);
+$h4-lg-font-map: (1.375, 1.75);
+$h4-xl-font-map: (2, 2.75);

@@ -1,0 +1,32 @@
+.responsive-columns__row--no-gutter {
+    margin-left: 0;
+    margin-right: 0;
+
+    > .responsive-columns__column {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.responsive-columns__row--match-height {
+
+    > .responsive-columns__column {
+
+        > section {
+            height : calc(100% - 9px);
+
+            .see-cc {
+            height: 100%;
+        }
+        }
+    }
+}
+
+.responsive-columns__row--reversed {
+    flex-direction: column-reverse;
+
+    @include media-breakpoint-up('md') {
+        flex-direction: row;
+    }
+}
+

@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "ES6",
+        "baseUrl": ".",
+        "paths": {
+            "glidejs": ["node_modules/@glidejs/glide/dist/glide.modular.esm.js"],
+            "@dependencies/*": ["src/main/webpack/site/globals/*"]
+        },
+        "removeComments": true,
+        "allowJs": true,
+        "preserveConstEnums": true,
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": true
+    },
+    "include": [ "src/**/*.ts" ],
+    "exclude": [
+        "node_modules",
+        "**/tests/*.js",
+        "**/tests/*.ts",
+        "**/target",
+        "**/*.test.ts",
+        "**/*.test.js",
+        "*.config.js",
+        "**/clientlib-dependencies/dependencies.js",
+        "**/clientlib-site/site.js",
+        "**/clientlib-site/webpack/vendors.js"
+    ]
+}

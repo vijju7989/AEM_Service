@@ -1,0 +1,164 @@
+.see-vs {
+    position: relative;
+
+    @include media-breakpoint-up('lg') {
+        background-color: $black;
+    }
+
+    &__content {
+
+        @include media-breakpoint-up('lg') {
+            display: flex;
+            flex-basis: 100%;
+        }
+
+        .see-vs__tile {
+            display: flex;
+            flex-basis: 25%;
+            flex-direction: column;
+            position: relative;
+            z-index: $z-index--high;
+
+            .see-vs {
+                &__text {
+                    padding: 50px;
+                    z-index: $z-index--high;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 9px;
+                    border: none;
+                    left: 0;
+                    color: $white;
+                    background-color: rgba($footer, 0.7);
+
+                    @include media-breakpoint-up('lg') {
+                        bottom: 0;
+
+                        &.hasBorder {
+                            border-left: 0.5px solid rgba($lightGrey, 0.5);
+                            border-right: 0.5px solid rgba($lightGrey, 0.5);
+                        }
+                    }
+
+                    .see-vs {
+                        &__number {
+                            color: rgb(243, 244, 245);
+                            font-family: Forza-Book;
+                            font-size: 28px;
+                            font-weight: 300;
+                            height: 28px;
+                            letter-spacing: 0px;
+                        }
+
+                        &__title {
+                            color: $white;
+                            font-family: Forza-Bold;
+                            font-size: 11px;
+                            font-weight: bold;
+                            height: 32px;
+                            letter-spacing: 3px;
+                            line-height: 32px;
+                            text-transform: uppercase;
+                            max-width: 80%;
+
+                            @include media-breakpoint-up('lg') {
+                                font-size: 11px;
+                                max-width: inherit;
+                            }
+                        }
+
+                        &__bottom {
+                            position: absolute;
+                            bottom: 0;
+                            left: 50px;
+                            right: 50px;
+                            padding-bottom: 20px;
+                            display: flex;
+                            flex-basis: 100%;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            @include media-breakpoint-up('lg') {
+                                padding-bottom: 50px;
+                                display: block;
+                                left: unset;
+                                right: unset;
+                                max-width: 80%;
+                            }
+
+                            .see-vs {
+                                &__abstract {
+                                    color: $white;
+                                    font-family: Forza-Bold;
+                                    font-size: 20px;
+                                    font-weight: bold;
+                                    height: 90px;
+                                    letter-spacing: 0px;
+                                    line-height: 30px;
+                                    max-width: 50%;
+                                    opacity: 1;
+                                    transition: opacity 0.2s ease;
+
+                                    @include media-breakpoint-up('lg') {
+                                        max-width: 80%;
+                                    }
+
+                                    &.hidden {
+                                        opacity: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &__link {
+                    display: flex;
+                }
+
+                &__img-wrapper {
+                    height: 100%;
+                    opacity: 1;
+                    transition: opacity 0.5s ease-out;
+
+                    .see-vs__img {
+                        min-height: 283px;
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+
+                    @include media-breakpoint-up('lg') {
+                        &.hidden {
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__videos {
+        display: none;
+
+        @include media-breakpoint-up('lg') {
+            display: flex;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .see-vs__player {
+            object-fit: cover;
+            width: 100%;
+            opacity: 0.2;
+
+            &.hidden {
+                display: none;
+            }
+        }
+    }
+}

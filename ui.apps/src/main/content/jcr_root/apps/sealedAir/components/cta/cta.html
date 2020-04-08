@@ -1,0 +1,12 @@
+<div data-sly-test="${wcmmode.edit}" class="edit-in-dialog-msg">
+    ${'CTA' @i18n}
+</div>
+
+<div class="see-cta see-cta--${ctaModel.alignment}" data-sly-use.ctaModel="com.sealedair.core.models.CTAModel">
+    <button data-sly-attribute.id="${ctaModel.id}" data-sly-attribute.target="${ctaModel.link ? ctaModel.linkBehavior : ''}"
+        data-sly-element="${ctaModel.link ? 'a' : 'button'}" class="see-cta__${ctaModel.style}" href="${ctaModel.linkUrl}"
+        aria-label="${ctaModel.accessibilityLabel}">
+            <span data-sly-test="${ctaModel.text}" class="see-cta__text">${ctaModel.text}</span>
+            <span data-sly-test="${ctaModel.hasArrow}" class="see-cta__icon icon-arrow-right"></span>
+    </button>
+</div>

@@ -1,0 +1,41 @@
+<div data-sly-test="${wcmmode.edit}" class="edit-in-dialog-msg">
+    ${'Video Slider' @i18n}
+</div>
+
+<div class="see-vs" data-sly-use.vsModel="com.sealedair.core.models.VideoSliderModel">
+
+    <div class="see-vs__videos" data-sly-list="${vsModel.slides}">
+        <video id="videoSlide-${itemList.index}" data-video-index="${itemList.index}" class="see-vs__player hidden" preload="none" autoplay loop muted volume="0.5" playsinline>
+            <source src="${item.videoUrl}" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="see-vs__content"  >
+        <sly data-sly-list="${vsModel.slides}">
+            <a href="${item.linkUrl}" class="see-vs__tile" data-video-index="${itemList.index}">
+
+                <div class="see-vs__text">
+                    <span class="see-vs__number">0</span>
+                    <h2 class="see-vs__title">${item.title}</h2>
+
+                    <div class="see-vs__bottom">
+                        <div class="see-vs__abstract hidden">${item.text @ context="html"}</div>
+
+                        <div class="see-vs__cta see-cta">
+                            <div class="see-cta__secondary">
+                                <span class="see-cta__icon icon-arrow-right"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <picture class="see-vs__img-wrapper">
+                    <source srcset="${item.desktopImageUrl}" media="(min-width: 1280px)">
+                    <source srcset="${item.mobileTabletImageUrl}" media="(max-width: 1279px)">
+                    <img class="see-vs__img" src="${item.mobileTabletImageUrl}" alt="true" />
+                </picture>
+            </a>
+        </sly>
+    </div>
+
+</div>

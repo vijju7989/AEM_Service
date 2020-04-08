@@ -1,0 +1,33 @@
+module.exports =  {
+    parser:  '@typescript-eslint/parser',  // Specifies the ESLint parser
+    extends:  [
+      'plugin:@typescript-eslint/recommended',  // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    ],
+    parserOptions:  {
+      ecmaVersion:  2018,  // Allows for the parsing of modern ECMAScript features
+      sourceType:  'module',  // Allows for the use of imports
+    },
+    globals: {
+      window: true,
+      URLSearchParams: true
+    },
+    rules:  {
+        "curly": 1,
+        "@typescript-eslint/camelcase": [0],
+        "@typescript-eslint/explicit-function-return-type": [0],
+        "@typescript-eslint/no-explicit-any": [0],
+        "@typescript-eslint/no-empty-function": [0],
+        "@typescript-eslint/no-this-alias": [0],
+        "ordered-imports": [0],
+        "object-literal-sort-keys": [0],
+        "max-len": [1, 255],
+        "new-parens": 1,
+        "no-bitwise": 1,
+        "no-cond-assign": 1,
+        "no-trailing-spaces": 0,
+        "eol-last": 1,
+        "func-style": [0],
+        "semi": 1,
+        "no-var": 0
+    },
+  };

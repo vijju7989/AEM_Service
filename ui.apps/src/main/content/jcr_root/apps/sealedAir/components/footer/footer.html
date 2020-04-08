@@ -1,0 +1,47 @@
+<div class="see-footer" data-sly-use.footerModel="com.sealedair.core.models.FooterModel">
+    <div class="see-footer__top">
+        <div class="see-footer__col-1">
+            <ul class="see-footer__portal-links" data-sly-list.portal="${footerModel.portalLinks}">
+                <li class="see-footer__link-item">
+                    <a href="${portal.linkUrl ? portal.linkUrl : '#'}" target="${portal.linkBehavior}" class="see-footer__link ${portal.icon}" aria-label="${portal.ariaLabel}">${portal.text}</a>
+                </li>
+            </ul>
+            <ul class="see-footer__nav-links" data-sly-list.navLink="${footerModel.navLinks}">
+                <li class="see-footer__link-item">
+                    <a href="${navLink.linkUrl ? navLink.linkUrl : '#'}" target="${navLink.linkBehavior}" class="see-footer__navlink ${navLink.icon}" aria-label="${navLink.ariaLabel ? navLink.ariaLabel : navLink.text}">${navLink.text}</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="see-footer__col-2">
+            <ul class="see-footer__nav-language">
+                <li class="see-footer__link">
+                    <a href="${footerModel.userLink ? footerModel.userLink : '#'}" class="see-footer__sign-in icon-account"></a>
+                </li>
+                <li class="see-footer__link">
+                    <sly class="navbar-language" data-sly-resource="${'lang-navigation' @ resourceType='sealedAir/components/languagenavigation'}">
+                    </sly>
+                </li>
+            </ul>
+        </div>
+
+        <div class="see-footer__col-3">
+            <ul class="see-footer__social-links_wrap" data-sly-list.socialLink="${footerModel.socialLinks}">
+                <li class="see-footer__social-items">
+                    <a href="${socialLink.linkUrl}" target="${socialLink.linkBehavior}" class="see-footer__social-links icon-${socialLink.icon}" aria-label="${socialLink.ariaLabel}"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="see-footer__utils">
+
+        <span class="see-footer__copyright">${footerModel.copyright}</span>
+
+        <ul class="see-footer__util-links" data-sly-list.utilLink="${footerModel.utilLinks}">
+            <li class="see-footer__link">
+                <a href="${utilLink.linkUrl ? utilLink.linkUrl : '#'}" target="${utilLink.linkBehavior}" class="see-footer__bottomfooter-links" aria-label="${utilLink.ariaLabel ? utilLink.ariaLabel : utilLink.text}">${utilLink.text}</a>
+            </li>
+        </ul>
+    </div>
+</div>
